@@ -1,4 +1,4 @@
-const dataList = require("./data");
+const dataList = require("./data");//参与抽检展示品
 import {getLuckDraw} from './api'; //调用接口返回中奖奖品 awardCode
 Page({
   /**
