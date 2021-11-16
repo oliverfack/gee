@@ -1,0 +1,28 @@
+<!-- index.wxml -->
+<view class="turntable">
+  <view class="sider-light top-light" ><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon></view>
+  <view class="sider-light left-light" ><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon></view>
+  <view class="sider-light bottom-light" ><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon></view>
+  <view class="sider-light right-light" ><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon><icon></icon></view>
+  <view class="content">
+        <view wx:for="{{awardList}}" wx:key="awardID">
+          <view wx:if="{{index == 4}}" class="award">
+            <view wx:if="{{activityCount > 0}}" class="btn">
+              <text class="btn_text" catchtap="startLuck">{{item.awardName}}</text>
+            </view>
+            <view wx:else class="btn lucking">
+              <text class="btn_text">{{item.awardName}}</text>
+            </view>
+          </view>
+          <view wx:else class="award {{currentIndex == index ? (lucking ?'selected':'selecteds' ): 'unselected'}}">
+            <block>
+              <view class="option">
+                <image src="./img/noluck_icon.png"></image>
+              </view>
+              <view class="txt">{{item.awardName}}{{index}}</view>
+            </block>
+
+          </view>
+        </view>
+      </view>
+  </view>
